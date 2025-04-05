@@ -18,8 +18,10 @@ typedef struct {
 
 InstructionRegister IR;
 
-int main() {
+int main(char **files) {
     int EOP = 1;
+FILE *InputFile = fopen(files[1], "r"); //Open input file passed in from command line
+FILE *OutFile = fopen(files[2], "w"); //Open output file passed in from command line
 
     while ( EOP == 1 ) {
 
@@ -86,7 +88,12 @@ int main() {
                 }
                 break;
         }
+        // Print current state of PC, AC, DM after each instruction
+        fprintf(OutFile, "PC = %d | A = %d | DM = [%d,%d,%d,%d,%d,%d,%d,%d,%d,%d]", PC, A, DM[0],DM[1],DM[2],DM[3],DM[4],DM[5],DM[6],DM[7],DM[8],DM[9]);
     }
-    
+    //Close all files
+    fclose(InputFile);
+    fclose(OutFile);
+
     return 0;
 }
