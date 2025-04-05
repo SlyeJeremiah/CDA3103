@@ -18,10 +18,10 @@ typedef struct {
 
 InstructionRegister IR;
 
-int main(char **files) {
+int main(char **file) {
     int EOP = 1;
-FILE *InputFile = fopen(files[1], "r"); //Open input file passed in from command line
-FILE *OutFile = fopen(files[2], "w"); //Open output file passed in from command line
+FILE *InputFile = fopen(file[1], "r"); //Open input file passed in from command line
+FILE *OutFile = fopen("output.txt", "w"); //Open output file hard coded
 
     while ( EOP == 1 ) {
 
