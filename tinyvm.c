@@ -18,10 +18,21 @@ typedef struct {
 
 InstructionRegister IR;
 
-int main(char **file) {
+int main(int argc, char **file) {
     int EOP = 1;
-FILE *InputFile = fopen(file[1], "r"); //Open input file passed in from command line
-FILE *OutFile = fopen("output.txt", "w"); //Open output file hard coded
+    FILE *InputFile = fopen(file[1], "r"); //Open input file passed in from command line
+    FILE *OutFile = fopen("output.txt", "w"); //Open output file hard coded
+
+    // Load instructions into IM (instruction memory array)
+    int opcode, operand;
+    int index = 0;
+    while (fscanf(InputFile, "%d %d", &opcode, &operand) == 2 && index < 128) {
+        // good to note that the "== 2" makes sure that the number of successfully read integers from a line is 2
+        IM[index] = opcode;
+        index++;
+        IM[index] = operand;
+        index++;
+    }
 
     while ( EOP == 1 ) {
 
@@ -84,6 +95,20 @@ FILE *OutFile = fopen("output.txt", "w"); //Open output file hard coded
             case 9:
                 // SKIPZ
                 if ( A == 0 ) {
+                    PC = PC + 4;
+                }
+                break;
+
+            case 10:
+                // SKIPG
+                if ( A > 0 ) {
+                    PC = PC + 4;
+                }
+                break;
+
+            case 11:
+                // SKIPL
+                if ( A < 0 ) {
                     PC = PC + 4;
                 }
                 break;
