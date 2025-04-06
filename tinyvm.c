@@ -128,7 +128,7 @@ int main(int argc, char **file) {
                 fprintf(OutFile, "SKIPZ\n");
 
                 if ( A == 0 ) {
-                    PC = PC + 4;
+                    PC = PC + 2;
                 }
                 break;
 
