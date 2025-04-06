@@ -138,7 +138,7 @@ int main(int argc, char **file) {
                 fprintf(OutFile, "SKIPG\n");
 
                 if ( A > 0 ) {
-                    PC = PC + 4;
+                    PC = PC + 2;
                 }
                 break;
 
@@ -148,7 +148,7 @@ int main(int argc, char **file) {
                 fprintf(OutFile, "SKIPL\n");
                 
                 if ( A < 0 ) {
-                    PC = PC + 4;
+                    PC = PC + 2;
                 }
                 break;
         }
