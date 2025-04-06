@@ -103,7 +103,7 @@ int main(int argc, char **file) {
             case 6:
                 // OUT <7>
                 printf("OUT <7>\nResult is: %d\n", A);
-                fprintf(OutFile, "OUT <7>\nResult is: %d\n");
+                fprintf(OutFile, "OUT <7>\nResult is: %d\n", A);
                 break;
 
             case 7:
