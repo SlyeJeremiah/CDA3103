@@ -153,6 +153,7 @@ int main(int argc, char **file) {
                 break;
         }
         // Print current state of PC, AC, DM after each instruction
+        printf("\nPC = %d | A = %d | DM = [%d,%d,%d,%d,%d,%d,%d,%d,%d,%d]\n\n", PC, A, DM[0],DM[1],DM[2],DM[3],DM[4],DM[5],DM[6],DM[7],DM[8],DM[9]);
         fprintf(OutFile, "\nPC = %d | A = %d | DM = [%d,%d,%d,%d,%d,%d,%d,%d,%d,%d]\n\n", PC, A, DM[0],DM[1],DM[2],DM[3],DM[4],DM[5],DM[6],DM[7],DM[8],DM[9]);
     }
 

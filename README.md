@@ -17,3 +17,5 @@ NOTE: The first two numbers to be inputted can be whatever two positive, nonzero
 Output will be printed into output.txt
 
 NOTE: output.txt will get erased and replaced every time the program is ran.
+
+NOTE: If there are compilation errors, try copying tinyvm.c and elf.txt to a new folder and compile and run within that folder.
